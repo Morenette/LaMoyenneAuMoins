@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.onveutlamoyenneaumoins.Constants;
 import com.example.onveutlamoyenneaumoins.R;
 import com.example.onveutlamoyenneaumoins.Singletons;
 import com.example.onveutlamoyenneaumoins.presentation.controller.MainController;
@@ -32,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
                 Singletons.getGson(),
                 Singletons.getSharedPreferences(getApplicationContext())
         );
+
         controller.onStart();
-
-
 
     }
 
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 controller.onItemClick(item);
             }
         });
+
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -59,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigateToDetails(Pokemon pokemon) {
-        Toast.makeText(getApplicationContext(), "TODO NAVIGATE", Toast.LENGTH_SHORT).show();
+
+        Intent myIntent = new Intent(MainActivity.this, DetailsActivity.class);
+        myIntent.putExtra(Constants.POKEMON_KEY, Singletons.getGson().toJson(pokemon));
+
+        MainActivity.this.startActivity(myIntent);
+
     }
 }

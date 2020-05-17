@@ -73,8 +73,6 @@ public class MainController {
                 .putString("jsonPokemonList", jsonString)
                 .apply();
 
-        Toast.makeText(view.getApplicationContext(), "API Saved", Toast.LENGTH_SHORT).show();
-
     }
 
     private List<Pokemon> getDataFromCache() {
