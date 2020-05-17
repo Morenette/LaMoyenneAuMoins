@@ -1,4 +1,4 @@
-package com.example.onveutlamoyenneaumoins;
+package com.example.onveutlamoyenneaumoins.presentation.model;
 
 import java.util.List;
 

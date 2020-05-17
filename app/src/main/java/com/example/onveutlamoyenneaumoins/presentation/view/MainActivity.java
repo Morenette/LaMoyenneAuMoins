@@ -1,7 +1,6 @@
-package com.example.onveutlamoyenneaumoins;
+package com.example.onveutlamoyenneaumoins.presentation.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.Constraints;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,6 +9,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.onveutlamoyenneaumoins.Constants;
+import com.example.onveutlamoyenneaumoins.R;
+import com.example.onveutlamoyenneaumoins.data.PokeApi;
+import com.example.onveutlamoyenneaumoins.presentation.model.Pokemon;
+import com.example.onveutlamoyenneaumoins.presentation.model.RestPokemonResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
