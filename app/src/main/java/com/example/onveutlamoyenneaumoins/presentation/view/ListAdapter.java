@@ -14,6 +14,11 @@ import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private List<Pokemon> values;
+    private OnItemClickListener listener;
+
+    public interface OnItemClickListener {
+        void onItemClick(Pokemon item);
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -40,8 +45,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
 
-    public ListAdapter(List<Pokemon> myDataset) {
-        values = myDataset;
+    public ListAdapter(List<Pokemon> myDataset, OnItemClickListener listener) {
+        this.values = myDataset;
+        this.listener = listener;
+    }
+
+    public void setListener(OnItemClickListener listener){
+        this.listener = listener;
     }
 
 
@@ -65,6 +75,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         holder.txtHeader.setText(currentPokemon.getName());
 
         holder.txtFooter.setText(currentPokemon.getUrl());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                listener.onItemClick(currentPokemon);
+            }
+        });
     }
 
     @Override
