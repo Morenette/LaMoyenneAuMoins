@@ -10,6 +10,12 @@ J'avais comme projet (bien ambitieux) d'afficher une recycler view dans une autr
 
 J'ai essayé jusqu'aux derniers instant d'essayer de trouver des solutions à mes problèmes de mes propres moyens. Ce fut un échec total.
 
+Le rendu d'un projet avec la onte dite "minimal" a été préféré à celui d'un projet ne fonctionnant pas.
+
+# Des ajours ?
+
+Le "GitFlow" est une notion que j'ai trouvé très intéréssante, je l'ai donc appliqué dans ce projet.
+
 
 # Conclusion
 Ce projet a été tout de même une belle expérience.
