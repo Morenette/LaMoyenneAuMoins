@@ -12,7 +12,7 @@ J'ai essayé jusqu'aux derniers instant d'essayer de trouver des solutions à me
 
 Le rendu d'un projet avec la onte dite "minimal" a été préféré à celui d'un projet ne fonctionnant pas.
 
-# Des ajours ?
+# Des ajouts ?
 
 Le "GitFlow" est une notion que j'ai trouvé très intéréssante, je l'ai donc appliqué dans ce projet.
 
