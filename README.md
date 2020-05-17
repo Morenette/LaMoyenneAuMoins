@@ -1,7 +1,7 @@
 # Projet
 Ce projet est l'abouissement de tout les TDs (sauf la denière partie du dernier car Non comprise)
 
-# Pourquoi si peux ?
+# Pourquoi si peu ?
 Venant de prepa, c'est la première année que je code. C'est aussi le premier projet solo que j'effectue depuis de l'année.
 
 J'avais comme projet (bien ambitieux) d'afficher une recycler view dans une autre recycler view affichant elle même des détails de recettes écologiques pour le ménage de son domicile. Ci dessous les brouillons que j'ai commit et Push sur GitHUB
