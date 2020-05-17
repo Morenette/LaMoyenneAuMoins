@@ -7,15 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".presentation.view.MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <TextView
+        android:id="@+id/detail_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_txt_test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#000"/>
+        android:background="@color/colorAccent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
