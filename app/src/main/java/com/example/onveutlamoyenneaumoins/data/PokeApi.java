@@ -1,4 +1,6 @@
-package com.example.onveutlamoyenneaumoins;
+package com.example.onveutlamoyenneaumoins.data;
+
+import com.example.onveutlamoyenneaumoins.presentation.model.RestPokemonResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

@@ -1,4 +1,4 @@
-package com.example.onveutlamoyenneaumoins;
+package com.example.onveutlamoyenneaumoins.presentation.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,6 +6,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.onveutlamoyenneaumoins.R;
+import com.example.onveutlamoyenneaumoins.presentation.model.Pokemon;
 
 import java.util.List;
 
