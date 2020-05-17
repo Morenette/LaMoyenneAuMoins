@@ -4,30 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.onveutlamoyenneaumoins.Constants;
 import com.example.onveutlamoyenneaumoins.R;
 import com.example.onveutlamoyenneaumoins.Singletons;
-import com.example.onveutlamoyenneaumoins.data.PokeApi;
 import com.example.onveutlamoyenneaumoins.presentation.controller.MainController;
 import com.example.onveutlamoyenneaumoins.presentation.model.Pokemon;
-import com.example.onveutlamoyenneaumoins.presentation.model.RestPokemonResponse;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
                 Singletons.getGson(),
                 Singletons.getSharedPreferences(getApplicationContext())
         );
+
         controller.onStart();
-
-
 
     }
 
@@ -60,7 +46,13 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        mAdapter = new ListAdapter(pokemonList);
+        mAdapter = new ListAdapter(pokemonList, new ListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Pokemon item) {
+                controller.onItemClick(item);
+            }
+        });
+
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -68,4 +60,12 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "API Error", Toast.LENGTH_SHORT).show();
     }
 
+    public void navigateToDetails(Pokemon pokemon) {
+
+        Intent myIntent = new Intent(MainActivity.this, DetailsActivity.class);
+        myIntent.putExtra(Constants.POKEMON_KEY, Singletons.getGson().toJson(pokemon));
+
+        MainActivity.this.startActivity(myIntent);
+
+    }
 }

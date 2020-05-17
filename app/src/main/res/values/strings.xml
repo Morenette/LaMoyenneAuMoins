@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">OnVeutLaMoyenneAuMoins</string>
+    <string name="detail_txt_test">Test Details</string>
 </resources>
